@@ -19,7 +19,6 @@ notes.post('/', (req, res) => {
   console.info(`${req.method} request received to submit notes`);
 
   // Destructuring assignment for the items in req.body
-  
   const { title, text } = req.body;
   // If all the required properties are present
   if (title && text) {
@@ -39,7 +38,7 @@ notes.post('/', (req, res) => {
 
     res.json(response);
   } else {
-    res.json('Error in posting note');
+    res.json('Error in posting a note');
   }
 });
 
