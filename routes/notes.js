@@ -1,20 +1,39 @@
-const notes = require('express').Router();
+const notes = require("express").Router();
 
 // Helper function to generate unique ids
-const uuid = require('../helpers/uuid');
+const uuid = require("../helpers/uuid");
 
 // Helper functions for reading and writing to the JSON file
-const { readFromFile, readAndAppend } = require('../helpers/fsUtils');
+const {
+  readFromFile,
+  readAndAppend,
+  writeToFile,
+} = require("../helpers/fsUtils");
+const { json } = require("express");
 
 // GET Route for retrieving all the notes
-notes.get('/', (req, res) => {
+notes.get("/", (req, res) => {
   console.info(`${req.method} request received for notes`);
 
-  readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)));
+  readFromFile("./db/db.json").then((data) => res.json(JSON.parse(data)));
+});
+
+// DELETE Route for a specific note
+notes.delete("/:id", (req, res) => {
+  const id = req.params.id;
+  readFromFile("./db/db.json")
+    .then((data) => JSON.parse(data))
+    .then((json) => {
+      const result = json.filter((notes) => notes.id !== id);
+
+      writeToFile("./db/db.json", result);
+
+      res.json(`Note ${id} has been deleted`);
+    });
 });
 
 // POST Route for submitting a note
-notes.post('/', (req, res) => {
+notes.post("/", (req, res) => {
   // Log that a POST request was received
   console.info(`${req.method} request received to submit notes`);
 
@@ -29,16 +48,16 @@ notes.post('/', (req, res) => {
       id: uuid(),
     };
 
-    readAndAppend(newNote, './db/db.json');
+    readAndAppend(newNote, "./db/db.json");
 
     const response = {
-      status: 'success',
+      status: "success",
       body: newNote,
     };
 
     res.json(response);
   } else {
-    res.json('Error in posting a note');
+    res.json("Error in posting a note");
   }
 });
 
