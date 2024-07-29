@@ -4,13 +4,38 @@
         "text": "Test text"
     },
     {
-        "title": "Laundry",
-        "text": "Do laundry by thursday",
-        "id": "9c74"
+        "title": "Go to Dentist",
+        "text": "Appointment scheduled for 8/6/2024 at 8:30am",
+        "id": "2d1b"
     },
     {
-        "title": "Homework",
-        "text": "complete homework ",
-        "id": "8e20"
+        "title": "Find a dog sitter",
+        "text": "Out of town November 7-12",
+        "id": "745c"
+    },
+    {
+        "title": "Make Appetizer Dish",
+        "text": "Make a dish for friends-giving",
+        "id": "3a20"
+    },
+    {
+        "title": "Clean the House",
+        "text": "Vacuum and mop floors",
+        "id": "f47e"
+    },
+    {
+        "title": "Study",
+        "text": "Study material for an hour. Test on Friday.",
+        "id": "fdac"
+    },
+    {
+        "title": "Grocery Shopping",
+        "text": "Shop for needed groceries ",
+        "id": "4eae"
+    },
+    {
+        "title": "Vacation",
+        "text": "Book airbnb",
+        "id": "a55a"
     }
 ]

@@ -18,7 +18,8 @@ You can utilize the Note Taker applicatioon to write and save notes
 
 The image shows the web application's apperance 
 
-![alt text](assets/images/)
+![alt text](./public/assets/images/Screenshot%202024-07-29%20at%204.54.51 PM.png)
+![alt text](./public/assets/images/Screenshot%202024-07-29%20at%205.11.46 PM.png)
 
 ## Badges
 
